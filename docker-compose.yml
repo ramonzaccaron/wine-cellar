@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  wine-cellar-server:
+    container_name: wine-cellar-server
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - Elasticsearch__Uri=http://host.docker.internal:9200
+    ports:
+      - "9005:80"
+  elasticsearch:
+    container_name: elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - transport.host=0.0.0.0
+  kibana:
+    container_name: kibana
+    image: docker.elastic.co/kibana/kibana:7.15.0
+    environment:
+      - xpack.security.enabled=false
+      - ELASTICSEARCH_HOSTS=http://host.docker.internal:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
