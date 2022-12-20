@@ -4,7 +4,7 @@ services:
   wine-cellar-server:
     container_name: wine-cellar-server
     build:
-      context: ./
+      context: ./Server/
       dockerfile: Dockerfile
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
