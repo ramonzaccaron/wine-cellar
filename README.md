@@ -1,9 +1,9 @@
 # Wine Cellar - Cellar Control
-___
+
 Wine Cellar is a project that will be developed with Angular technology applying the Angular Material UI interface library and ASP.NET Core Web API in order to manage wine bottles in a cellar, such as storage and consumption of labels, their quantities and more.
 
 ## Technologies
-___
+
 #### Server-Side
 - ASP.NET Core Web API 6 - is a cross-platform, high-performance, open-source framework for building modern, cloud-enabled, Internet-connected apps. [Official Site](https://learn.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-6.0)
 - Serilog -  is a diagnostic logging library for .NET applications. [Official Site](https://serilog.net/)
@@ -13,7 +13,7 @@ ___
 [WIP]
 
 ## Project Organization
-___
+
 All of the files of the projects are located inside this repository. The layers and their files are located inside of the main project, the Web API project. 
 The backend is divided in layers even though existing just only one project, the division is made by folders, in this way we have the layers bellow:
 
@@ -26,7 +26,6 @@ The backend is divided in layers even though existing just only one project, the
   - Access interfaces to data repositories.
 
 ## Dependencies
-___
 
 The dependencies of the backend are managed by the Nuget. The instructions below are used to open the project ans install the dependencies before run the application.
 
@@ -35,15 +34,15 @@ The dependencies of the backend are managed by the Nuget. The instructions below
 3. Install an IDE to open, build and run the application. I recomend Visual Studio, [download here](https://visualstudio.microsoft.com/pt-br/downloads/).
 
 ## Running the project
-___
+
 After all the tools installed and the project cloned and open with your IDE in your machine, build the project and restore the packages.
 
 #### Using Visual Studio
-___
+
 To run the project with Visual Studio you need just to select the IIS Express run mode and click the Run button. The swagger will open with the documentation of the API controllers in the follw address: https://localhost:44323/swagger/index.html.
 
 #### Using Docker
-___
+
 To run the aplication using docker, you need first install Docker tool, [Official Site](https://www.docker.com/).
 
 In the root of the project you'll see a docker-compose file, let's use this to run our project with diferent containers working together. With this file we'll run all resources that our project have: Web API, Client, Elasticsearch, Kibana, etc.
@@ -57,7 +56,7 @@ This command will pull the images stored in the docker hub repository and run it
 After all the images are running your Wine Cellar API will be listening in the address http://localhost:9005.
 
 #### Using Elasticsearch
-___
+
 If you want to log data in the Elasticsearch use the containers configurations into the docker-compose file to run Elasticsearch and Kibana server to log and see logged data. Configure the Elasticsearch server address in the apropriated Wine Cellar API project configuration, like below:
 
 ```
